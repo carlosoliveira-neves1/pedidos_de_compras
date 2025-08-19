@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Produtos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Pedidos de Compras</h1>
+
+    <!-- Importar planilha base -->
+    <div class="import-section">
+      <label for="importar-base">📂 Importar Produtos Base:</label>
+      <input type="file" id="importar-base" accept=".csv">
+    </div>
+
+    <!-- Filtro de fornecedor -->
+    <div class="filtro-section">
+      <label for="filtro-fornecedor">Filtrar por Fornecedor:</label>
+      <select id="filtro-fornecedor">
+        <option value="todos">Todos</option>
+      </select>
+    </div>
+
+    <!-- Tabela de produtos -->
+    <table id="tabela-produtos">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Custo ICMS</th>
+          <th>Multiplicador</th>
+          <th>Preço Sugerido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- preenchido pelo JS -->
+      </tbody>
+    </table>
+
+    <!-- Exportar -->
+    <div class="export-section">
+      <button id="btn-exportar">💾 Exportar Produtos</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
